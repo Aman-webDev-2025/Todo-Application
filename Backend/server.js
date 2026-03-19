@@ -11,12 +11,7 @@ DbConnection();
 const app = express();
 
 //middleware
-app.use(cors({
-    origin: 'https://todo-list-by-aman2.netlify.app',
-    methods: ["GET" , "POST" , "PATCH" , "DELETE"],
-    credentials: true
-}));
-
+app.use(cors());
 app.use(express.json());
 app.use((req , res , next) => {
     console.log(req.path , req.method)
@@ -39,7 +34,7 @@ app.use((req , res) => {
 })
 
 //port
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT;
 
 
 app.listen(PORT , () => {
