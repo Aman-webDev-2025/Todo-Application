@@ -12,8 +12,8 @@ const app = express();
 
 //middleware
 app.use(cors({
-    origin: 'https://todo-list-by-aman2.netlify.app/',
-    method: ["GET" , "POST" , "PATCH" , "DELETE"],
+    origin: 'https://todo-list-by-aman2.netlify.app',
+    methods: ["GET" , "POST" , "PATCH" , "DELETE"],
     credentials: true
 }));
 
@@ -39,7 +39,7 @@ app.use((req , res) => {
 })
 
 //port
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 10000;
 
 
 app.listen(PORT , () => {
