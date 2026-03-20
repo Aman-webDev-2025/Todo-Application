@@ -11,7 +11,13 @@ DbConnection();
 const app = express();
 
 //middleware
-app.use(cors());
+app.use(cors({
+    origin: 'https://todo-by-aman02.netlify.app',
+    methods: ["GET" , "POST" , "PATCH" , "DELETE"],
+    credentials: true
+}));
+
+
 app.use(express.json());
 app.use((req , res , next) => {
     console.log(req.path , req.method)
