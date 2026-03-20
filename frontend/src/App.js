@@ -14,7 +14,7 @@ function App() {
   const [error , setError] = useState(null);
 
   //backend url
-  const API_URL = "https://todo-backend-rhky.onrender.com";
+  const API_URL = "https://todo-backend-rhky.onrender.com/todos";
 
   //load todos
   useEffect(() => {
